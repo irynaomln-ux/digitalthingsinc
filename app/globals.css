@@ -8,9 +8,11 @@
   --color-foreground: #0a0a0a;
   --color-border: #c9c9c9;
   --color-muted-foreground: #4a4a4a;
+  --color-accent: #ff4b23;
+  --color-panel: #1c1c1a;
 }
 
-:root { color-scheme: light; --background: #ffffff; --foreground: #0a0a0a; --border: #c9c9c9; }
+:root { color-scheme: light; --background: #ffffff; --foreground: #0a0a0a; --border: #c9c9c9; --accent: #ff4b23; --panel: #1c1c1a; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: #ffffff; }
 body { margin: 0; background: #ffffff; color: #0a0a0a; font-family: 'Public Sans', Arial, sans-serif; font-size: 15px; line-height: 1.55; }
@@ -33,7 +35,8 @@ a:focus-visible, summary:focus-visible { outline: 2px solid #0a0a0a; outline-off
 .page-shell { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 5rem); }
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(560px, 1fr); gap: clamp(3rem, 6vw, 6rem); align-items: center; padding: clamp(5rem, 12vw, 10rem) 0 clamp(5rem, 10vw, 8rem); }
 .hero-copy { max-width: 680px; }
-.eyebrow { margin: 0 0 1.25rem; color: #7d7d7d; font-size: .8rem; }
+.eyebrow { display: flex; align-items: center; gap: .5rem; margin: 0 0 1.25rem; color: #7d7d7d; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+.eyebrow::before { content: '→'; color: var(--accent); }
 h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 550; letter-spacing: -.055em; line-height: 1.02; }
 .hero h1 { max-width: 10ch; margin: 0; font-size: clamp(4.5rem, 7.8vw, 7.5rem); font-weight: 800; letter-spacing: -.075em; }
 .lede { max-width: 37rem; margin: 2rem 0; color: #4a4a4a; font-size: 1.08rem; line-height: 1.6; }
@@ -71,6 +74,28 @@ ul { padding: 0; margin: 0; list-style: none; }
 .accordion-panel ul { margin: 0 0 1.25rem; list-style: disc; padding-left: 1.1rem; color: #4a4a4a; }
 .accordion-panel li { padding: .2rem 0; }
 @keyframes accordion-in { from { opacity: 0; transform: translateY(-.35rem); } to { opacity: 1; transform: translateY(0); } }
+
+/* Roles band — dark accent section, styled after the reference "Industries We Serve" block */
+.roles-band { position: relative; overflow: hidden; padding: clamp(6rem, 12vw, 11rem) 0; background: var(--panel); color: #f3f2ee; }
+.roles-band .page-shell { position: relative; z-index: 1; }
+.roles-watermark { position: absolute; top: -.06em; right: clamp(-1rem, 2vw, 2rem); z-index: 0; margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(6rem, 15vw, 15rem); line-height: 1; letter-spacing: -.05em; color: rgba(243, 242, 238, .05); pointer-events: none; user-select: none; white-space: nowrap; }
+.roles-band .eyebrow { color: rgba(243, 242, 238, .5); }
+.roles-band .section-intro h2 { color: #f3f2ee; }
+.roles-band .placement-grid { border-color: rgba(243, 242, 238, .14); }
+.roles-band .placement { border-color: rgba(243, 242, 238, .14); }
+.roles-band .placement h3 { color: #f3f2ee; }
+.roles-band .placement h3::after { content: ''; display: block; width: 2rem; height: 2px; margin-top: .9rem; background: var(--accent); }
+.roles-band .accordion-item { border-color: rgba(243, 242, 238, .14); }
+.roles-band .accordion-trigger { color: rgba(243, 242, 238, .68); }
+.roles-band .accordion-trigger:hover { color: #f3f2ee; }
+.roles-band .accordion-trigger:focus-visible { outline-color: #f3f2ee; }
+.roles-band .role-trigger-copy small { color: rgba(243, 242, 238, .42); }
+.roles-band .chevron { color: var(--accent); }
+.roles-band .accordion-panel { border-color: rgba(243, 242, 238, .14); }
+.roles-band .accordion-panel ul { color: rgba(243, 242, 238, .65); }
+.roles-band .accordion-panel .button-dark { background: #f3f2ee; color: #0a0a0a; }
+.roles-band .accordion-panel .button-dark:hover { background: var(--accent); color: #fff; }
+@media (max-width: 767px) { .roles-watermark { display: none; } }
 .jobs-hero { padding: clamp(5rem, 12vw, 10rem) 0 5rem; border-bottom: 1px solid #c9c9c9; }
 .jobs-hero h1 { max-width: none; }
 .jobs-hero .lede { margin-bottom: 0; }

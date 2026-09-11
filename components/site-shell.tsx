@@ -6,4 +6,4 @@ export function Header() {
 }
 
 export function Footer() { return <footer><span>Digital Things Recruitment Agency</span><span>© 2026</span></footer> }
-export function SiteShell({ children }: { children: ReactNode }) { return <main><Header /><div className="page-shell">{children}</div><Footer /></main> }
+export function SiteShell({ children }: { children: ReactNode }) { return <main><Header />{children}<Footer /></main> }

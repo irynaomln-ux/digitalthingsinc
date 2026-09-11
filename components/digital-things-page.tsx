@@ -2,6 +2,15 @@ import { hireHref, jobsHref, placementGroups, process, reasons, roles } from '@/
 import { RoleAccordion } from '@/components/role-accordion'
 import { SiteShell } from '@/components/site-shell'
 
+const collage = [
+  { src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80&auto=format&fit=crop', offset: 'collage-offset-a' },
+  { src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80&auto=format&fit=crop', offset: 'collage-offset-b' },
+  { src: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=500&q=80&auto=format&fit=crop', offset: 'collage-offset-c' },
+  { src: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=500&q=80&auto=format&fit=crop', offset: 'collage-offset-d' },
+  { src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&q=80&auto=format&fit=crop', offset: 'collage-offset-a' },
+  { src: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=500&q=80&auto=format&fit=crop', offset: 'collage-offset-c' },
+]
+
 export function DigitalThingsPage() {
   return (
     <SiteShell>
@@ -23,6 +32,14 @@ export function DigitalThingsPage() {
             </div>
           </div>
         </section>
+
+        <div className="collage" aria-hidden="true">
+          {collage.map((item, index) => (
+            <div className={`collage-item ${item.offset}`} key={index}>
+              <img src={item.src} alt="" loading="lazy" />
+            </div>
+          ))}
+        </div>
 
         <section className="stats" aria-label="Digital Things at a glance">
           <div><strong>1.5–3 weeks</strong><span>to first shortlist</span></div>

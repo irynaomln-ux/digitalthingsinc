@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { hireHref, jobsHref } from '@/lib/roles'
 import { ScrollProgress } from '@/components/scroll-progress'
+import { FooterForm } from '@/components/footer-form'
 
 export function Header() {
   return (
@@ -37,7 +38,7 @@ export function Footer() {
       <div className="page-shell footer-inner">
         <div className="footer-top">
           <a className="footer-wordmark" href="/#top">Digital Things</a>
-          <p className="footer-lede">Let&apos;s build high-performing teams with confidence. Reach out and we&apos;ll get back to you within one business day.</p>
+          <p className="footer-lede">Reach out — we typically reply within one business day.</p>
           <div className="footer-columns">
             <div>
               <p className="footer-col-title">Pages</p>
@@ -57,15 +58,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <form className="footer-form" action="mailto:digitaltechrec@gmail.com" method="get">
-          <p className="footer-form-title">Tell us who you&apos;re looking for</p>
-          <div className="footer-form-row">
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="email" name="email" placeholder="Email" required />
-          </div>
-          <textarea name="message" placeholder="Message" rows={4} />
-          <button className="button button-light" type="submit">Send <span aria-hidden="true">↗</span></button>
-        </form>
+        <FooterForm />
       </div>
       <div className="page-shell footer-bottom">
         <span>Digital Things Recruitment Agency</span>

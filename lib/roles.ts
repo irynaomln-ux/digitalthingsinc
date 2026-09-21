@@ -15,7 +15,10 @@ export const roles: Role[] = [
   { title: 'Marketing Manager', summary: 'Mid-level · growth, content, digital products', requirements: ['Experience owning multi-channel marketing programs', 'Strong writing, positioning, and campaign planning skills', 'Comfort using data to learn and improve performance', 'Ability to collaborate closely with product, sales, and creative teams'] },
 ]
 
-export const applicationHref = (title: string) => `mailto:digitaltechrec@gmail.com?subject=${encodeURIComponent(`Application: ${title}`)}`
+export const contactEmail = 'recruitment@digitalthingsinc.com'
+export const linkedinHref = 'https://www.linkedin.com/company/digitalthingsincc'
+
+export const applicationHref = (title: string) => `mailto:${contactEmail}?subject=${encodeURIComponent(`Application: ${title}`)}`
 
 export const placementGroups = [
   { title: 'Engineering', roles: ['Machine Learning Engineer', 'Backend & AI Engineer', 'Data Engineer', 'QA Engineer'] },
@@ -37,5 +40,5 @@ export const reasons = [
   ["We tell you when it's not working", 'Straight answers make better decisions. If the brief needs changing, we will say so.'],
 ] as const
 
-export const hireHref = 'mailto:digitaltechrec@gmail.com?subject=Hiring%20inquiry'
-export const jobsHref = '/jobs'
+export const hireHref = `mailto:${contactEmail}?subject=${encodeURIComponent('Hiring inquiry')}`
+export const jobsHref = `mailto:${contactEmail}?subject=${encodeURIComponent("I'm interested in a role at Digital Things")}`

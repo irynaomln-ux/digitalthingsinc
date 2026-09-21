@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
+import { contactEmail } from '@/lib/roles'
 
 export function FooterForm() {
   const [name, setName] = useState('')
@@ -11,7 +12,7 @@ export function FooterForm() {
     event.preventDefault()
     const subject = encodeURIComponent(`Hiring inquiry from ${name || 'website'}`)
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)
-    window.location.href = `mailto:digitaltechrec@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`
   }
 
   return (
